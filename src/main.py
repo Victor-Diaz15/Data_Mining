@@ -1,5 +1,4 @@
 #Practica 3 Exploracion de Datos con Python y R
-from re import X
 import pandas as pd
 import matplotlib.pyplot as plt
 
