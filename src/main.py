@@ -3,25 +3,28 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 data = pd.read_csv('./data/avocado.csv')
-#print(data)
 
 #Realizar en Python o R lo siguiente.
 
 #1. Obtener Cuantas filas y cuantas columnas tiene el conjunto de datos
-print("\nObtener Cuantas filas y cuantas columnas tiene el conjunto de datos:")
-print(data.shape)
+table = data.shape
+print("\nNumero de filas en el conjunto de datos es: " + str(table[0]))
+print("Numero de columnas en el conjunto de datos es: " + str(table[1]))
+
 
 #2. Mostrar los primeros 100 registros
-print("\nMostrar los primeros 100 registros:")
+print("\nMostrar los primeros 100 registros: ")
 print(data.head(100))
 
 #3. Mostrar los últimos 20 registros
-print("\nMostrar los últimos 20 registros:")
+print("\nMostrar los últimos 20 registros: ")
 print(data.tail(20))
 
 #4. Cual es el precio mínimo, máximo y promedio del aguacate en ese conjunto de datos
 print("\nCual es el precio mínimo, máximo y promedio del aguacate en ese conjunto de datos:")
-print(data['AveragePrice'].describe())
+print("Precio mínimo: " + str(data['AveragePrice'].min()))
+print("Precio máximo: " + str(data['AveragePrice'].max()))
+print("Precio promedio: " + str(data['AveragePrice'].mean()))
 
 '''
 5.Generar un gráfico de tipo scatter usando  para la x la variable 'year'
@@ -32,15 +35,12 @@ los 3 sub-conjuntos deben mostrarse en el mismo gráfico.
 
 #region #1
 r_atlanta = data[data['region'] == 'Atlanta']
-#print(r_atlanta)
 
 #region #2
 r_boston = data[data['region'] == 'Boston']
-#print(r_boston)
 
-#region #2
+#region #3
 r_california = data[data['region'] == 'California']
-#print(r_california)
 
 #Creando un subplot para agrupar los graficos
 x1 = plt.subplot()
